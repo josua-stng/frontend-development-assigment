@@ -37,7 +37,7 @@ const Photos = () => {
   useEffect(() => {
     setLoading(true);
     fetch(
-      "http://localhost:3001/photos?_sort=id&_order=" + sort + "&q=" + search
+      "https://gallery-app-server.vercel.app/photos?_sort=id&_order=" + sort + "&q=" + search
     )
       .then((res) => res.json())
       .then((data) => {
@@ -49,7 +49,7 @@ const Photos = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:3001/photos")
+    fetch("https://gallery-app-server.vercel.app/photos")
       .then((response) => response.json())
       .then((data) => setPhotos(data))
       .finally(() => setLoading(false))
